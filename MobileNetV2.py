@@ -109,7 +109,6 @@ class MobileNetV2(nn.Module):
                 m.weight.data.fill_(1)
                 m.bias.data.zero_()
             elif isinstance(m, nn.Linear):
-                n = m.weight.size(1)
                 m.weight.data.normal_(0, 0.01)
                 m.bias.data.zero_()
 
