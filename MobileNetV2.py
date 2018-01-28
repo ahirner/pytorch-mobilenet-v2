@@ -91,17 +91,6 @@ class MobileNetV2Backbone(nn.Sequential):
 class MobileNetV2(nn.Module):
     def __init__(self, num_classes=1000, input_size=224, width_mult=1.):
         super(MobileNetV2, self).__init__()
-        # setting of inverted residual blocks
-        self.interverted_residual_setting = [
-            # t, c, n, s
-            [1, 16, 1, 1],
-            [6, 24, 2, 2],
-            [6, 32, 3, 2],
-            [6, 64, 4, 2],
-            [6, 96, 3, 1],
-            [6, 160, 3, 2],
-            [6, 320, 1, 1],
-        ]
 
         # building first layer
         self.features = MobileNetV2Backbone(input_size=input_size,
